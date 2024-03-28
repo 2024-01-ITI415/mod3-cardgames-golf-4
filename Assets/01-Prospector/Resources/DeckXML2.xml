@@ -80,7 +80,7 @@
         <pip x="0.58" y="-1.4" z="0" flip="1"/>
     </card>
     <!-- Face cards have no pips, so this references the name of the Sprite to be shown. -->
-    <card rank="11" face="New_FaceCard_11"/>
-    <card rank="12" face="New_FaceCard_12"/>
-    <card rank="13" face="New_FaceCard_13"/>
+    <card rank="11" face="FaceCard_11"/>
+    <card rank="12" face="FaceCard_12"/>
+    <card rank="13" face="FaceCard_13"/>
 </xml>
