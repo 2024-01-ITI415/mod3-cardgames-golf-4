@@ -39,13 +39,13 @@
     <slot id="14" x="10"  y="-1" faceup="0" layer="2" />
     
     <!-- Layer3, the next level. -->
-    <slot id="27" x="-8"  y="1" faceup="1" layer="3" />
-    <slot id="26" x="-5"  y="1" faceup="1" layer="3" />
-    <slot id="25" x="-2"   y="1" faceup="1" layer="3" />
-    <slot id="24" x="1"   y="1" faceup="1" layer="3" />
-    <slot id="23" x="4"  y="1" faceup="1" layer="3" />
-    <slot id="22" x="7"  y="1" faceup="1" layer="3" />
-    <slot id="21" x="10"  y="1" faceup="1" layer="3" />
+    <slot id="27" x="-8"  y="1" faceup="0" layer="3" />
+    <slot id="26" x="-5"  y="1" faceup="0" layer="3" />
+    <slot id="25" x="-2"   y="1" faceup="0" layer="3" />
+    <slot id="24" x="1"   y="1" faceup="0" layer="3" />
+    <slot id="23" x="4"  y="1" faceup="0" layer="3" />
+    <slot id="22" x="7"  y="1" faceup="0" layer="3" />
+    <slot id="21" x="10"  y="1" faceup="0" layer="3" />
     
     <!-- This positions the draw pile and staggers it -->
     <slot type="drawpile" x="0" y="4" xstagger="0.15" layer="4"/>
