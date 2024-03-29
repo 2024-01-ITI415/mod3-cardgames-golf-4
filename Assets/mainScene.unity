@@ -627,6 +627,8 @@ GameObject:
   - component: {fileID: 680330218}
   - component: {fileID: 680330217}
   - component: {fileID: 680330219}
+  - component: {fileID: 680330220}
+  - component: {fileID: 680330221}
   m_Layer: 5
   m_Name: pnlButtons
   m_TagString: Untagged
@@ -719,6 +721,33 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &680330220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680330215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e2ad8da465458449607b48ad95a50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabFloatingScore: {fileID: 0}
+  _score: 0
+  _scoreString: 
+--- !u!114 &680330221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680330215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ade958b8f481094f9b77f11f6a65ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1012617318
 GameObject:
   m_ObjectHideFlags: 0
