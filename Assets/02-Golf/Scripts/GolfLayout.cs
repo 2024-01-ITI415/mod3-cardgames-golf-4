@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Golfns{
-[System.Serializable]
 
-public class SlotDef {
+[System.Serializable]
+public class GolfSlotDef {
 public float x;
 public float y;
 public bool faceUp = false;
@@ -16,16 +15,20 @@ public string type = "slot";
 public Vector2 stagger;
 }
 
-public class Layout : MonoBehaviour
+namespace Golfns{
+
+
+
+public class GolfLayout : MonoBehaviour
 {
     
     public PT_XMLReader xmlr; // Just like Deck, this has a PT_XMLReader
 public PT_XMLHashtable xml; // This variable is for faster xml access
 public Vector2 multiplier; // The offset of the tableau's center
 // SlotDef references
-public List<SlotDef> slotDefs; // All the SlotDefs for Row0-Row3
-public SlotDef drawPile;
-public SlotDef discardPile;
+public List<GolfSlotDef> slotDefs; // All the SlotDefs for Row0-Row3
+public GolfSlotDef drawPile;
+public GolfSlotDef discardPile;
 // This holds all of the possible names for the layers set by layerID
 public string[] sortingLayerNames = new string[] { "Row0", "Row1",
 "Row2", "Row3", "Discard", "Draw" };
@@ -38,11 +41,11 @@ xml = xmlr.xml["xml"][0]; // And xml is set as a shortcut to the XML
 multiplier.x = float.Parse(xml["multiplier"][0].att("x"));
 multiplier.y = float.Parse(xml["multiplier"][0].att("y"));
 // Read in the slots
-SlotDef tSD;
+GolfSlotDef tSD;
 // slotsX is used as a shortcut to all the <slot>s
 PT_XMLHashList slotsX = xml["slot"];
 for (int i=0; i<slotsX.Count; i++) {
-tSD = new SlotDef(); // Create a new SlotDef instance
+tSD = new GolfSlotDef(); // Create a new SlotDef instance
 if (slotsX[i].HasAtt("type")) {
 // If this <slot> has a type attribute parse it
 tSD.type = slotsX[i].att("type");

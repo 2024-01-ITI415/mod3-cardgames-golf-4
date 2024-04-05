@@ -335,7 +335,7 @@ ScoreManager.EVENT(eScoreEvent.gameLoss);
 FloatingScoreHandler(eScoreEvent.gameLoss);
 }
 // Reload the scene, resetting the game
-SceneManager.LoadScene("__Prospector_Scene_0");
+SceneManager.LoadScene("__Prospector");
 
 // Reload the scene in reloadDelay seconds
 // This will give the score a moment to travel
@@ -343,7 +343,7 @@ Invoke ("ReloadLevel", reloadDelay); // a
 }
 void ReloadLevel() {
 // Reload the scene, resetting the game
-SceneManager.LoadScene("__Prospector_Scene_0");
+SceneManager.LoadScene("__Prospector");
 }
 
 

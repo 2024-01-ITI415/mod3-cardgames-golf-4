@@ -11,7 +11,7 @@ public class Golf : MonoBehaviour {
 
 	[Header("Set in Inspector")]
 	public TextAsset			deckXML;
-	public TextAsset layoutXML;
+	public TextAsset 		GolfLayoutXML;
 	public float xOffset = 3;
 	public float yOffset = -2.5f;
 	public Vector3 layoutCenter;
@@ -20,7 +20,7 @@ public class Golf : MonoBehaviour {
 	public Vector2 fsPosMid2 = new Vector2( 0.4f, 1.0f );
 	public Vector2 fsPosEnd = new Vector2( 0.5f, 0.95f );
 	public float reloadDelay = 2f;// 2 sec delay between rounds
-	public Text gameOverText, roundResultText, highScoreText;
+	//public Text gameOverText, roundResultText, highScoreText;
 
 
 	[Header("Set Dynamically")]
@@ -35,10 +35,10 @@ public class Golf : MonoBehaviour {
 
 	void Awake(){
 		S = this;
-		SetUpUITexts();
+		/*SetUpUITexts();*/
 	}
 
-	void SetUpUITexts() {
+	/*void SetUpUITexts() {
 // Set up the HighScore UI Text
 GameObject go = GameObject.Find("HighScore");
 if (go != null) {
@@ -64,18 +64,20 @@ gameOverText.gameObject.SetActive(show);
 roundResultText.gameObject.SetActive(show);
 }
 
+*/
 
+//
 
 	void Start() {
 
-		Scoreboard.S.score = ScoreManager.SCORE;
+/*		Scoreboard.S.score = ScoreManager.SCORE;*/
 
 		deck = GetComponent<Deck> ();
 		deck.InitDeck (deckXML.text);
 		Deck.Shuffle(ref deck.cards);
 
 		layout = GetComponent<Layout>();
-		layout.ReadLayout(layoutXML.text);
+		layout.ReadLayout(GolfLayoutXML.text);
 		
 		drawPile = ConvertListCardsToListCardGolfs( deck.cards );
 		LayoutGame();
@@ -129,7 +131,7 @@ layout.multiplier.y * tSD.y,
 -tSD.layerID );
 // ^ Set the localPosition of the card based on slotDef
 cp.layoutID = tSD.id;
-cp.slotDef = tSD;
+//cp.slotDef = tSD ;//
 // CardGolf in the tableau have the state CardState.tableau
 cp.state = eCardState.tableau;
 cp.SetSortingLayerName(tSD.layerName);
@@ -275,12 +277,12 @@ break;
 
 }
 // Check to see whether the game is over or not
-CheckForGameOver();
+//CheckForGameOver();
 
 }
 
 // Test whether the game is over
-void CheckForGameOver() {
+/*void CheckForGameOver() {
 // If the tableau is empty, the game is over
 if (tableau.Count==0) {
 // Call GameOver() with a win
@@ -303,7 +305,7 @@ return;
 GameOver (false);
 }
 // Called when the game is over. Simple for now, but expandable
-void GameOver(bool won) {
+/*void GameOver(bool won) {
 
 int score = ScoreManager.SCORE;
 if (fsRun != null) score += fsRun.score;
@@ -340,7 +342,7 @@ SceneManager.LoadScene("__Golf.cs_Scene_0");
 // Reload the scene in reloadDelay seconds
 // This will give the score a moment to travel
 Invoke ("ReloadLevel", reloadDelay); // a
-}
+}*/
 void ReloadLevel() {
 // Reload the scene, resetting the game
 SceneManager.LoadScene("__Golf.cs_Scene_0");
