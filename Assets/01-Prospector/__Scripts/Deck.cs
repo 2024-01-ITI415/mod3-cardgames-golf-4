@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using Golfns;
 public class Deck : MonoBehaviour {
 
 [Header("Set in Inspector")]
@@ -36,7 +36,7 @@ public class Deck : MonoBehaviour {
 	public List<CardDefinition>			cardDefs;
 	public Transform					deckAnchor;
 	public Dictionary<string, Sprite>	dictSuits;
-
+   
 
 	// called by Prospector when it is ready
 	public void InitDeck(string deckXMLText) {

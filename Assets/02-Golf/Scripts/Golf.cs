@@ -25,8 +25,8 @@ public class Golf : MonoBehaviour {
 
 	[Header("Set Dynamically")]
 	public Deck					deck;
-	public Layout               layout;
-	public List<CardGolf> drawPile;
+	public GolfLayout              layout;
+	public List<CardGolf> drawPile=new List<CardGolf>();
 	public Transform layoutAnchor;
 	public CardGolf target;
 	public List<CardGolf> tableau;
@@ -35,6 +35,13 @@ public class Golf : MonoBehaviour {
 
 	void Awake(){
 		S = this;
+
+		deck = GetComponent<Deck> ();
+		deck.InitDeck (deckXML.text);
+		Deck.Shuffle(ref deck.cards);
+
+		layout = GetComponent<GolfLayout>();
+		layout.ReadLayout(GolfLayoutXML.text);
 		/*SetUpUITexts();*/
 	}
 
@@ -72,32 +79,19 @@ roundResultText.gameObject.SetActive(show);
 
 /*		Scoreboard.S.score = ScoreManager.SCORE;*/
 
-		deck = GetComponent<Deck> ();
-		deck.InitDeck (deckXML.text);
-		Deck.Shuffle(ref deck.cards);
-
-		layout = GetComponent<Layout>();
-		layout.ReadLayout(GolfLayoutXML.text);
 		
+	 	
 		drawPile = ConvertListCardsToListCardGolfs( deck.cards );
 		LayoutGame();
 	}
 
-	List<CardGolf> ConvertListCardsToListCardGolfs(List<Card>lCD) {
+	List<CardGolf> ConvertListCardsToListCardGolfs(List<Card> lCD) {
 		List<CardGolf> lCP = new List<CardGolf>();
         foreach (Card tCD in lCD) {
-            CardGolf tCP = tCD as CardGolf; 
-            if (tCP != null) {
-                lCP.Add(tCP);
-            }
+            lCP.Add(tCD.GetComponent<CardGolf>());
         }
         return lCP;
-    
-	
-	
-	
-	
-	}
+}
 	
 
 	CardGolf Draw() {
@@ -118,7 +112,7 @@ roundResultText.gameObject.SetActive(show);
 	}
 CardGolf cp;
 // Follow the layout
-foreach (SlotDef tSD in layout.slotDefs) {
+foreach (GolfSlotDef tSD in layout.slotDefs) {
 // ^ Iterate through all the SlotDefs in the layout.slotDefs as tSD
 cp = Draw(); // Pull a card from the top (beginning) of the draw Pile
 cp.faceUp = tSD.faceUp; // Set its faceUp to the value in SlotDef

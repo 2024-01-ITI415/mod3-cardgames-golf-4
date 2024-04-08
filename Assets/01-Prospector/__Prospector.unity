@@ -462,6 +462,7 @@ MonoBehaviour:
   decorators: []
   cardDefs: []
   deckAnchor: {fileID: 0}
+  gl: {fileID: 0}
 --- !u!114 &827460515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,5 +1001,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 827460513}
   - {fileID: 429351334}
-  - {fileID: 505020715}
   - {fileID: 1151606755}
+  - {fileID: 505020715}

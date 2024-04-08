@@ -59,7 +59,7 @@
 	<slot type="drawpile" x="-4" y="-2" xstagger="0.15" layer="5"/>
 	
 	<!-- This positions the discard pile and target card -->
-	<slot type="discardpile" x="0" y="-2" layer="6"/>
+	<slot type="discardpile" x="0" y="1" layer="6"/>
 	
 </xml>
 	
