@@ -777,7 +777,6 @@ MonoBehaviour:
     rank: 13
     pips: []
   deckAnchor: {fileID: 0}
-  gl: {fileID: 965175185}
 --- !u!114 &965175187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,8 +818,9 @@ MonoBehaviour:
   - Row1
   - Row2
   - Row3
-  - Discard
+  - Row4
   - Draw
+  - Discard
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
