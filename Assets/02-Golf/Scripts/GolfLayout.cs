@@ -44,7 +44,7 @@ multiplier.y = float.Parse(xml["multiplier"][0].att("y"));
 GolfSlotDef tSD;
 // slotsX is used as a shortcut to all the <slot>s
 PT_XMLHashList slotsX = xml["slot"];
-for (int i=0; i<slotsX.Count-1; i++) {
+for (int i = 0; i < slotsX.Count; i++) {
 tSD = new GolfSlotDef(); // Create a new SlotDef instance
 if (slotsX[i].HasAtt("type")) {
 // If this <slot> has a type attribute parse it
