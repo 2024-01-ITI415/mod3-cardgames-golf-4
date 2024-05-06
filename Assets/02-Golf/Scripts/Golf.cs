@@ -20,7 +20,7 @@ public class Golf : MonoBehaviour {
 	public Vector2 fsPosMid2 = new Vector2( 0.4f, 1.0f );
 	public Vector2 fsPosEnd = new Vector2( 0.5f, 0.95f );
 	public float reloadDelay = 2f;// 2 sec delay between rounds
-	//public Text gameOverText, roundResultText, highScoreText;
+	public Text gameOverText, roundResultText, highScoreText;
 
 
 	[Header("Set Dynamically")]
@@ -42,14 +42,14 @@ public class Golf : MonoBehaviour {
 
 		layout = GetComponent<GolfLayout>();
 		layout.ReadLayout(GolfLayoutXML.text);
-		/*SetUpUITexts();*/
+		SetUpUITexts();
 	}
 
-	/*void SetUpUITexts() {
+	void SetUpUITexts() {
 // Set up the HighScore UI Text
 GameObject go = GameObject.Find("HighScore");
 if (go != null) {
-highScoreText = go.GetComponent<Text>();
+	highScoreText = go.GetComponent<Text>();
 }
 int highScore = ScoreManager.HIGH_SCORE;
 string hScore = "High Score: "+Utils.AddCommasToNumber(highScore);
@@ -67,11 +67,12 @@ roundResultText = go.GetComponent<Text>();
 ShowResultsUI( false );
 }
 void ShowResultsUI(bool show) {
-gameOverText.gameObject.SetActive(show);
+	
+	gameOverText.gameObject.SetActive(show);
 roundResultText.gameObject.SetActive(show);
 }
 
-*/
+
 
 //
 
@@ -243,7 +244,7 @@ MoveToTarget(Draw()); // Moves the next drawn card to the target
 UpdateDrawPile(); // Restacks the drawPile
 ScoreManager.EVENT(eScoreEvent.draw);
 
-FloatingScoreHandler(eScoreEvent.draw);
+//FloatingScoreHandler(eScoreEvent.draw);
 
 break;
 case eCardState.tableau:
@@ -264,7 +265,7 @@ MoveToTarget(cd); // Make it the target card
 SetTableauFaces(); // Update tableau card face-ups
 ScoreManager.EVENT(eScoreEvent.mine);
 
-FloatingScoreHandler(eScoreEvent.mine);
+//FloatingScoreHandler(eScoreEvent.mine);
 
 SetTableauFaces(); // Update tableau card face-ups
 break;
@@ -362,7 +363,7 @@ return(false);
 
 
 // Handle FloatingScore movement
-void FloatingScoreHandler(eScoreEvent evt) {
+/*void FloatingScoreHandler(eScoreEvent evt) {
 List<Vector2> fsPts;
 switch (evt) {
 // Same things need to happen whether it's a draw, a win, or a loss
@@ -394,7 +395,6 @@ fsPts = new List<Vector2>();
 fsPts.Add( p0 );
 fsPts.Add( fsPosMid );
 fsPts.Add( fsPosRun );
-fs = Scoreboard.S.CreateFloatingScore(ScoreManager.CHAIN, fsPts);
 fs.fontSizes = new List<float>(new float[] {4,50,28});
 if (fsRun == null) {
 fsRun = fs;
@@ -404,7 +404,7 @@ fs.reportFinishTo = fsRun.gameObject;
 }
 break;
 }
-}
+}*/
 
 
 
